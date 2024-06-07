@@ -1,0 +1,136 @@
+/* Home.css */
+
+.background-container {
+  background-image: url('image/bg1.jpg'); /* Adjust the path to point to your image */
+  background-size: cover;
+  background-position: center;
+  height: 700px; /* Set the height of the background container */
+  width: 100%; /* Set the width of the background container */
+}
+
+.background-container h2 {
+  position: absolute;
+  top: 700px; /* Set the margin-top to 400px */
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(4, 4, 4); /* Set text color */
+  text-align: center; /* Center align the text */
+  font-size: 24px; /* Set font size */
+}
+
+
+
+.content {
+  padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens up to 768px wide */
+  .background-container {
+    height: 500px; /* Reduce height for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Adjust styles for screens up to 576px wide */
+  .background-container {
+    height: 300px; /* Further reduce height for smaller screens */
+  }
+}
+
+
+
+.navbar {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: burlywood;
+}
+
+.brand {
+  color:white;
+  font-size: 20px;
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle-bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+.nav-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-items li {
+  margin-left: 20px;
+  position: relative; /* Set position to relative for dropdown positioning */
+}
+
+.nav-items li:hover .dropdown {
+  display: block; /* Display dropdown when hovering over the parent li */
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px); /* Position dropdown below the parent li with some spacing */
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.dropdown li {
+  margin: 5px 0;
+}
+
+.dropdown li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .nav-items {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+  }
+
+  .nav-items li {
+    margin: 10px 0;
+  }
+
+  .nav-items li:first-child {
+    margin-top: 0;
+  }
+
+  .nav-items li:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav-items.active {
+    display: flex;
+  }
+}
+
